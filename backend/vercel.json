@@ -1,0 +1,30 @@
+{
+    "name": "backend-api",
+    "version": 2,
+    "builds": [
+      {
+        "src": "backend/package.json",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      { "handle": "vercel" },
+      {
+        "src": "/api/.*",
+        "dest": "backend/index.js"
+      }
+    ],
+    "env": {
+      "APP_PORT": "5000",
+      "FRONTEND_URL": "http://localhost:3000",
+      "DB_PORT": "3306",
+      "DB_HOST": "localhost",
+      "DB_USER": "arnito69",
+      "DB_PASSWORD": "arnaud69",
+      "DB_NAME": "testDagBDD",
+      "JWT_SECRET": "ABJEJHC",
+      "JWT_TIMING": "1h",
+      "AVATAR_DIRECTORY": "public/uploads/"
+    }
+  }
+  
